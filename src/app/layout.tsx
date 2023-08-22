@@ -1,8 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Roboto } from 'next/font/google';
+import Navbar from './components/Navbar';
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: '300',
+});
 
 export const metadata: Metadata = {
   title: 'Store',
@@ -16,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={montserrat.className}>{children}</body>
+      <body className={roboto.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
