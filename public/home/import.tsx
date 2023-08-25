@@ -8,7 +8,7 @@ import iPhoneTradeIn from './iPhoneTradeIn.jpeg';
 import macbookAir from './macbookAir.jpeg';
 import tvPlus from './tvPlus.jpeg';
 
-export const homePageImages = [
+export const homePageImages = {
   appleCard,
   appleWatch,
   backToSchool,
@@ -18,4 +18,4 @@ export const homePageImages = [
   iPhoneTradeIn,
   macbookAir,
   tvPlus,
-];
+};
