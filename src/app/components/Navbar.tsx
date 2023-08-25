@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className='w-screen bg-white p-4'>
       <div className='flex items-center justify-center text-black'>
         <div className='flex flex-row text-sm text-gray-600'>
-          <ul className='flex items-center gap-7'>
+          <ul className='flex items-center gap-7 font-light'>
             <li>
               <Link href='/'>
                 <FaApple />
