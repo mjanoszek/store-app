@@ -44,7 +44,7 @@ const NavigationItem = () => {
       <div className='flex flex-col gap-5'>
         {links.map((link, index) => (
           <Link key={index} href={link.href}>
-            <p className='text-black font-bold text-3xl'>{link.label}</p>
+            <p className='text-black font-bold text-2xl'>{link.label}</p>
           </Link>
         ))}
       </div>
