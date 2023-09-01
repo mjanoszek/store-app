@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <div className='bg-white p-5'>
       <div className='flex items-center justify-center text-black'>
-        <div className='flex w-full flex-row text-sm text-gray-600 '>
+        <div className='flex w-full flex-row items-center justify-center text-sm text-gray-600 '>
           <ul className='flex w-full items-center justify-between font-light md:hidden'>
             <div className='flex items-center'>
               <motion.li {...menuItemVariants} className='mr-6'>
