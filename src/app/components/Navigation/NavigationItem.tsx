@@ -19,6 +19,20 @@ const variants = {
   },
 };
 
+const links = [
+  { href: '/store', label: 'Store' },
+  { href: '/mac', label: 'Mac' },
+  { href: '/ipad', label: 'iPad' },
+  { href: '/iphone', label: 'iPhone' },
+  { href: '/watch', label: 'Watch' },
+  { href: '/apple-vision-pro', label: 'Vision' },
+  { href: '/airpods', label: 'AirPods' },
+  { href: '/tv-home', label: 'TV & Home' },
+  { href: '/services', label: 'Entertainment' },
+  { href: '/accessories', label: 'Accessories' },
+  { href: '/support', label: 'Support' },
+];
+
 const NavigationItem = () => {
   return (
     <motion.li
@@ -28,7 +42,11 @@ const NavigationItem = () => {
       className='z-10 mb-20 flex cursor-pointer list-none items-center p-10 '
     >
       <div className='flex flex-col gap-5'>
-        <p className='text-3xl font-bold text-black'>link</p>
+        {links.map((link, index) => (
+          <Link key={index} href={link.href}>
+            <p className='text-black font-bold text-3xl'>{link.label}</p>
+          </Link>
+        ))}
       </div>
     </motion.li>
   );
