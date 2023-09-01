@@ -41,11 +41,14 @@ const Navbar = () => {
                   </Link>
                 </motion.li>
               </div>
-              <div className='flex items-center ml-5'>
+              <motion.div
+                {...menuItemVariants}
+                className='ml-5 flex items-center'
+              >
                 <li>
                   <NavigationMenu />
                 </li>
-              </div>
+              </motion.div>
             </div>
           </ul>
 
