@@ -3,13 +3,45 @@ import React from 'react';
 import { FaApple } from 'react-icons/fa6';
 import Searchbar from './Searchbar';
 import CheckoutBag from './CheckoutBag';
+import NavigationMenu from './Navigation/NavigationMenu';
 
 const Navbar = () => {
   return (
-    <div className='w-screen bg-white p-4'>
+    <div className='bg-white p-5'>
       <div className='flex items-center justify-center text-black'>
-        <div className='flex flex-row text-sm text-gray-600'>
-          <ul className='flex items-center gap-7 font-light'>
+        <div className='flex w-full flex-row text-sm text-gray-600 '>
+          <ul className='flex w-full items-center justify-between font-light md:hidden'>
+            <div className='flex items-center'>
+              <li className='mr-6'>
+                <Link href='/'>
+                  <FaApple />
+                </Link>
+              </li>
+            </div>
+            <div className='flex '>
+              <div className='flex items-center'>
+                <li className='mr-6'>
+                  <Link href='/search'>
+                    <Searchbar />
+                  </Link>
+                </li>
+              </div>
+              <div className='flex items-center'>
+                <li className='mr-6'>
+                  <Link href='/bag'>
+                    <CheckoutBag />
+                  </Link>
+                </li>
+              </div>
+              <div className='flex items-center'>
+                <li>
+                  <NavigationMenu />
+                </li>
+              </div>
+            </div>
+          </ul>
+
+          <ul className='hidden items-center gap-7 font-light md:flex'>
             <li>
               <Link href='/'>
                 <FaApple />
