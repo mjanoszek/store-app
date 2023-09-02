@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <div className='bg-white p-5'>
       <div className='flex items-center justify-center text-black'>
-        <div className='flex w-full flex-row items-center justify-center text-sm text-gray-600 '>
-          <ul className='flex w-full items-center justify-between font-light md:hidden'>
+        <div className='flex w-full flex-row items-center justify-center text-xs lg:text-sm text-gray-600 '>
+          <ul className='flex w-full items-center justify-between font-light min-[900px]:hidden'>
             <div className='flex items-center'>
               <motion.li {...menuItemVariants} className='mr-6'>
                 <Link href='/'>
@@ -52,7 +52,7 @@ const Navbar = () => {
             </div>
           </ul>
 
-          <ul className='hidden items-center gap-7 font-light md:flex'>
+          <ul className='hidden items-center gap-7 font-light min-[900px]:flex '>
             <motion.li {...menuItemVariants}>
               <Link href='/'>
                 <FaApple />
