@@ -11,10 +11,13 @@ const variants = {
   },
 };
 
-const NavigationAnimatedList = () => (
+interface NavigationAnimatedListProps {
+  isOpen: boolean;
+}
+const NavigationAnimatedList = ({ isOpen }: NavigationAnimatedListProps) => (
   <motion.ul
     variants={variants}
-    className='absolute left-0 top-12 z-40 w-screen '
+    className={`${!isOpen && 'hidden'} absolute left-0 top-12 z-40 w-screen`}
   >
     <NavigationItem />
   </motion.ul>
