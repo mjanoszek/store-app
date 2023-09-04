@@ -15,10 +15,10 @@ const menuItemVariants = {
 
 const Navbar = () => {
   return (
-    <div className='bg-white p-5'>
-      <div className='flex items-center justify-center text-black'>
-        <div className='flex w-full flex-row items-center justify-center text-xs lg:text-sm text-gray-600 '>
-          <ul className='flex w-full items-center justify-between font-light min-[900px]:hidden'>
+    <div className='fixed left-0 right-0 top-0 z-10 bg-white p-5'>
+      <div className='flex items-center justify-center text-black '>
+        <div className='flex w-full flex-row items-center justify-center text-xs text-gray-600 '>
+          <ul className='flex w-full items-center justify-between font-light min-[900px]:hidden '>
             <div className='flex items-center'>
               <motion.li {...menuItemVariants} className='mr-6'>
                 <Link href='/'>
