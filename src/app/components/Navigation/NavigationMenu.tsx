@@ -39,7 +39,7 @@ const NavigationMenu = () => {
     >
       <motion.div
         variants={sidebar}
-        className='absolute bottom-0 right-0 w-screen bg-white'
+        className='fixed bottom-0 right-0 w-screen bg-white'
       />
       <NavigationAnimatedList isOpen={isOpen} />
       <NavigationToggle toggle={() => toggleOpen()} />

@@ -29,7 +29,7 @@ const NavigationToggle = ({ toggle }: NavigationToggleProps) => (
   <div className='h-3 w-4'>
     <button
       onClick={toggle}
-      className='relative z-20 flex cursor-pointer select-none items-center justify-center rounded-full border-none bg-transparent outline-none'
+      className='relative flex cursor-pointer select-none items-center justify-center rounded-full border-none bg-transparent outline-none'
     >
       <svg width='36' height='16' viewBox='0 0 56 24'>
         <Path

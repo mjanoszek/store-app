@@ -42,7 +42,7 @@ const NavigationItem = () => {
   return (
     <motion.li
       variants={variants}
-      className='z-10 mb-20 flex cursor-pointer list-none items-center p-10 '
+      className='mb-20 flex cursor-pointer list-none items-center p-10'
     >
       <div className='flex flex-col gap-5'>
         {links.map((link, index) => (
