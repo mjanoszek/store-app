@@ -8,7 +8,9 @@ interface CTAButtonProps {
 const CTAButton = ({ label, url }: CTAButtonProps) => {
   return (
     <Link href={`/${url}`}>
-      <p className='text-blue-500'>{label} &rsaquo; </p>
+      <p className='text-lg text-blue-500 md:text-xl lg:text-2xl'>
+        {label} &rsaquo;{' '}
+      </p>
     </Link>
   );
 };
