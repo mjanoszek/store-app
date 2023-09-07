@@ -3,16 +3,15 @@ import HeroHeading from './HeroHeading';
 import HeroDescription from './HeroDescription';
 import CTAButton from './CTAButton';
 
-//add headingColor
 interface HeroSectionWrapperProps {
   SectionBackgroundColor: string;
   heading: string;
-  description: string;
-  contentColor?: 'white' | 'black';
+  description: string | JSX.Element;
   isLarge?: boolean;
   CTAButtonLabel: string;
   SecondCTAButtonLabel?: string;
   imageSrc: string;
+  textPosition?: 'end' | 'start' | 'center';
 }
 
 const HeroSectionWrapper = ({
@@ -20,8 +19,8 @@ const HeroSectionWrapper = ({
   description,
   CTAButtonLabel,
   isLarge = true,
+  textPosition = 'start',
   SecondCTAButtonLabel,
-  contentColor,
   imageSrc,
   SectionBackgroundColor,
 }: HeroSectionWrapperProps) => {
@@ -34,21 +33,37 @@ const HeroSectionWrapper = ({
     <div
       className={`w-full bg-cover bg-center ${
         isLarge
-          ? 'h-[500px] md:h-[490px] lg:h-[580px]'
-          : 'h-[512px] md:h-[662px] lg:h-[692px]'
+          ? 'h-[512px] md:h-[662px] lg:h-[692px]'
+          : 'h-[500px] md:h-[490px] lg:h-[580px] '
       }`}
       style={containerStyle}
     >
       <div
-        className={`flex flex-col items-center justify-center pt-12 text-center text-black`}
+        className={`flex h-full flex-col items-center py-8 text-center ${
+          isLarge ? 'items-center' : 'items-end '
+        }`}
       >
-        <div className={`text-${contentColor} flex max-w-xl flex-col gap-1 `}>
+        <div
+          className={`${
+            isLarge
+              ? 'max-w-[280px] text-black md:max-w-md lg:max-w-lg '
+              : 'max-w-[280px] text-white md:max-w-xs lg:max-w-md '
+          } flex h-full flex-col gap-1 justify-${textPosition}`}
+        >
           <HeroHeading heading={heading} isLarge={isLarge} />
           <HeroDescription description={description} isLarge={isLarge} />
           <div className='flex justify-center gap-5'>
-            <CTAButton label={CTAButtonLabel} url={'back-to-school'} />
+            <CTAButton
+              label={CTAButtonLabel}
+              url={'back-to-school'}
+              isLarge={isLarge}
+            />
             {SecondCTAButtonLabel && (
-              <CTAButton label={SecondCTAButtonLabel} url={'back-to-school'} />
+              <CTAButton
+                label={SecondCTAButtonLabel}
+                url={'back-to-school'}
+                isLarge={isLarge}
+              />
             )}
           </div>
         </div>
