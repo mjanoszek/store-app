@@ -25,26 +25,53 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleImageChange = (index: number) => {
-    setCurrentImage(index);
+    const newIndex = (currentImage + index + images.length) % images.length;
+    setCurrentImage(newIndex);
   };
 
   return (
-    <div className='min-w-screen flex  flex-col items-center justify-center text-center'>
+    <div className='min-w-screen flex  flex-col text-center'>
       <AnimatePresence mode='wait'>
         <motion.div
           key={currentImage}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ ease: 'easeInOut', duration: 0.3 }}
+          transition={{ type: 'tween', ease: 'easeInOut', duration: 0.5 }}
         >
-          <Image
-            src={images[currentImage]}
-            alt={`Image ${currentImage + 1}`}
-            width={imageDimensions.width}
-            height={imageDimensions.height}
-            loading='lazy'
-          />
+          <div className='flex overflow-hidden'>
+            {images[currentImage - 1] && (
+              <div className='flex flex-1   opacity-50'>
+                <button onClick={() => handleImageChange(-1)}>
+                  <Image
+                    src={images[currentImage - 1]}
+                    alt={`Image ${currentImage - 1}`}
+                    width={imageDimensions.width}
+                    height={imageDimensions.height}
+                    loading='lazy'
+                  />
+                </button>
+              </div>
+            )}
+            <div className='flex'>
+              <Image
+                src={images[currentImage]}
+                alt={`Image ${currentImage}`}
+                width={imageDimensions.width}
+                height={imageDimensions.height}
+                loading='lazy'
+              />
+            </div>
+            <div className='flex  flex-1 opacity-50'>
+              <Image
+                src={images[currentImage + 1]}
+                alt={`Image ${currentImage + 1}`}
+                width={imageDimensions.width}
+                height={imageDimensions.height}
+                loading='lazy'
+              />
+            </div>
+          </div>
         </motion.div>
       </AnimatePresence>
 
