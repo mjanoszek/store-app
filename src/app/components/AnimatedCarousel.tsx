@@ -24,8 +24,9 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
 
   const [currentImage, setCurrentImage] = useState(0);
 
-  const handleImageChange = (index: number) => {
-    const newIndex = (currentImage + index + images.length) % images.length;
+  const handleImageChange = (indexChange: number) => {
+    const newIndex =
+      (currentImage + indexChange + images.length) % images.length;
     setCurrentImage(newIndex);
   };
 
@@ -40,20 +41,20 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
           transition={{ type: 'tween', ease: 'easeInOut', duration: 0.5 }}
         >
           <div className='flex overflow-hidden'>
-            {images[currentImage - 1] && (
-              <div className='flex flex-1   opacity-50'>
-                <button onClick={() => handleImageChange(-1)}>
-                  <Image
-                    src={images[currentImage - 1]}
-                    alt={`Image ${currentImage - 1}`}
-                    width={imageDimensions.width}
-                    height={imageDimensions.height}
-                    loading='lazy'
-                  />
-                </button>
-              </div>
-            )}
-            <div className='flex'>
+            <div className='flex flex-1 opacity-50'>
+              <button onClick={() => handleImageChange(-1)}>
+                <Image
+                  src={
+                    images[(currentImage - 1 + images.length) % images.length]
+                  }
+                  alt={`Image ${currentImage - 1}`}
+                  width={imageDimensions.width}
+                  height={imageDimensions.height}
+                  loading='lazy'
+                />
+              </button>
+            </div>
+            <div className='flex flex-1'>
               <Image
                 src={images[currentImage]}
                 alt={`Image ${currentImage}`}
@@ -62,14 +63,16 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
                 loading='lazy'
               />
             </div>
-            <div className='flex  flex-1 opacity-50'>
-              <Image
-                src={images[currentImage + 1]}
-                alt={`Image ${currentImage + 1}`}
-                width={imageDimensions.width}
-                height={imageDimensions.height}
-                loading='lazy'
-              />
+            <div className='flex flex-1 opacity-50'>
+              <button onClick={() => handleImageChange(+1)}>
+                <Image
+                  src={images[(currentImage + 1) % images.length]}
+                  alt={`Image ${currentImage + 1}`}
+                  width={imageDimensions.width}
+                  height={imageDimensions.height}
+                  loading='lazy'
+                />
+              </button>
             </div>
           </div>
         </motion.div>
