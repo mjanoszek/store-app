@@ -40,38 +40,60 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
           exit={{ opacity: 0 }}
           transition={{ type: 'tween', ease: 'easeInOut', duration: 0.5 }}
         >
-          <div className='flex overflow-hidden'>
-            <div className='flex flex-1 opacity-50'>
+          <div className='flex gap-5 overflow-hidden'>
+            <div className='flex overflow-hidden opacity-50'>
               <button onClick={() => handleImageChange(-1)}>
-                <Image
-                  src={
-                    images[(currentImage - 1 + images.length) % images.length]
-                  }
-                  alt={`Image ${currentImage - 1}`}
-                  width={imageDimensions.width}
-                  height={imageDimensions.height}
-                  loading='lazy'
-                />
+                <div
+                  style={{
+                    width: `${imageDimensions.width}px`,
+                    height: `${imageDimensions.height}px`,
+                    overflow: 'hidden',
+                  }}
+                >
+                  <Image
+                    src={
+                      images[(currentImage - 1 + images.length) % images.length]
+                    }
+                    alt={`Image ${currentImage - 1}`}
+                    width={imageDimensions.width}
+                    height={imageDimensions.height}
+                    loading='lazy'
+                  />
+                </div>
               </button>
             </div>
-            <div className='flex flex-1'>
-              <Image
-                src={images[currentImage]}
-                alt={`Image ${currentImage}`}
-                width={imageDimensions.width}
-                height={imageDimensions.height}
-                loading='lazy'
-              />
-            </div>
-            <div className='flex flex-1 opacity-50'>
-              <button onClick={() => handleImageChange(+1)}>
+            <div className='flex'>
+              <div
+                style={{
+                  width: `${imageDimensions.width}px`,
+                  height: `${imageDimensions.height}px`,
+                }}
+              >
                 <Image
-                  src={images[(currentImage + 1) % images.length]}
-                  alt={`Image ${currentImage + 1}`}
+                  src={images[currentImage]}
+                  alt={`Image ${currentImage}`}
                   width={imageDimensions.width}
                   height={imageDimensions.height}
                   loading='lazy'
                 />
+              </div>
+            </div>
+            <div className='flex overflow-hidden opacity-50'>
+              <button onClick={() => handleImageChange(+1)}>
+                <div
+                  style={{
+                    width: `${imageDimensions.width}px`,
+                    height: `${imageDimensions.height}px`,
+                  }}
+                >
+                  <Image
+                    src={images[(currentImage + 1) % images.length]}
+                    alt={`Image ${currentImage + 1}`}
+                    width={imageDimensions.width}
+                    height={imageDimensions.height}
+                    loading='lazy'
+                  />
+                </div>
               </button>
             </div>
           </div>
