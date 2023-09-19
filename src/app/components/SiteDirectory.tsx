@@ -145,17 +145,17 @@ const SiteDirectory = () => {
       {categories.map((category, categoryIndex) => (
         <div
           key={categoryIndex}
-          className='flex h-full w-full flex-col items-start justify-center pb-2'
+          className='flex h-full w-full flex-col items-start justify-center '
         >
           <div className='w-full border-t border-gray-300' />
 
           <div key={category.categoryName} className='w-full'>
             <div
-              className='flex w-full items-center justify-between'
+              className='text-thin flex w-full items-center justify-between text-xs'
               onClick={() => handleCategoryClick(category.categoryName)}
             >
               <h3
-                className={`text-thin flex-1 cursor-pointer py-4 text-xs ${
+                className={`flex-1 cursor-pointer py-4 ${
                   activeCategory === category.categoryName
                     ? 'text-blue-500'
                     : ''
