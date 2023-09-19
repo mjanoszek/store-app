@@ -59,7 +59,7 @@ const HeroSectionWrapper = ({
           {headingType === 'text' && (
             <HeroHeading heading={heading} isLarge={isLarge} />
           )}
-          {headingType === 'image' && (
+          {headingType === 'image' && headingImage && (
             <div className='flex items-center justify-center'>
               <Image
                 src={headingImage}
