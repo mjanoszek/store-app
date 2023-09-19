@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export const footerData = [
@@ -7,10 +8,27 @@ export const footerData = [
   'If you reside in the U.S. territories, please call Goldman Sachs at 877-255-5923 with questions about Apple Card.',
   <span key='link'>
     Learn more about how Apple Card applications are evaluated at{'  '}
-    <a href='#'>
+    <Link href='#'>
       <u>test.com</u>
-    </a>
+    </Link>
   </span>,
   'A subscription is required for Apple TV+.',
   'Major League Baseball trademarks and copyrights are used with permission of MLB Advanced Media, L.P. All rights reserved.',
+];
+
+export const footerLegal = [
+  <span key='link'>
+    More ways to{' '}
+    <Link href='#' className='text-blue-700 underline'>
+      Find an Apple Store
+    </Link>{' '}
+    or{' '}
+    <Link href='#' className='text-blue-700 underline'>
+      other retailer
+    </Link>{' '}
+    near you. Or call 1-800-MY-APPLE
+  </span>,
+  'United states',
+  'Copyright © 2023',
+  'Privacy Policy | Terms of Use | Sales and Refunds | Legal | Site Map',
 ];
