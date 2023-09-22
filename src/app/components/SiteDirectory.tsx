@@ -1,13 +1,15 @@
 'use client';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaXmark, FaPlus } from 'react-icons/fa6';
 import { siteDirectories } from '../../../public/home/footerData';
 
 const SiteDirectory = () => {
+  const [isMedium, setIsMedium] = useState(false);
   const isMediumScreen = useMediaQuery({ minWidth: 735 });
+
   const categories = siteDirectories;
   const column1 = categories.slice(0, 2);
   const column2 = categories.slice(2, 4);
@@ -23,7 +25,11 @@ const SiteDirectory = () => {
     setActiveCategory(categoryName === activeCategory ? null : categoryName);
   };
 
-  return !isMediumScreen ? (
+  useEffect(() => {
+    setIsMedium(isMediumScreen);
+  }, [isMediumScreen]);
+
+  return !isMedium ? (
     <div className='flex flex-col flex-nowrap'>
       {siteDirectories.map((category, categoryIndex) => (
         <div
