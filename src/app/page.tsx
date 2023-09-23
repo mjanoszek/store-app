@@ -26,13 +26,22 @@ const categoryImages: CategoryImages = {
   appleCard: importAllImages('appleCard/appleCard', 'jpeg'),
   appleEvent: importAllImages('appleEvent/appleEvent', 'jpeg'),
   appleWatch: importAllImages('appleWatch/appleWatch', 'jpeg'),
+  appleWatch9: importAllImages('appleWatch9/appleWatch9', 'jpeg'),
+  appleWatchUltra2: importAllImages(
+    'appleWatchUltra2/appleWatchUltra2',
+    'jpeg',
+  ),
   watchLogo: importAllImages('appleWatch/watchLogo', 'png'),
+  watch9Logo: importAllImages('appleWatch9/watchLogo', 'png'),
+  watchUltra2Logo: importAllImages('appleWatchUltra2/watchLogo', 'png'),
   backToSchool: importAllImages('backToSchool/backToSchool', 'jpeg'),
   iPadPro: importAllImages('iPadPro/iPadPro', 'jpeg'),
   M2Chip: importAllImages('iPadPro/m2Chip', 'png'),
   iPhone14: importAllImages('iPhone14/iPhone14', 'jpeg'),
+  iPhone15: importAllImages('iPhone15/iPhone15', 'jpeg'),
   iPhone14Pro: importAllImages('iPhone14Pro/iPhone14Pro', 'jpeg'),
-  macbookAir: importAllImages('macbookAir/macbookAir', 'jpeg'),
+  iPhone15Pro: importAllImages('iPhone15Pro/iPhone15Pro', 'jpeg'),
+  macbookAir: importAllImages('gmacbookAir/macbookAir', 'jpeg'),
   foundation: importAllImages('tvPlus/foundation/foundation', 'jpeg'),
   hijack: importAllImages('tvPlus/hijack/hijack', 'jpeg'),
   invasion: importAllImages('tvPlus/invasion/invasion', 'jpeg'),
@@ -58,38 +67,52 @@ const Page = () => {
       <div className='flex flex-col gap-5 pb-2 pt-10'>
         <HeroSectionWrapper
           SectionBackgroundColor={'bg-pale'}
-          heading={'Save on Mac or iPad for college.'}
-          description={'Plus get a gift card up to $150.'}
-          CTAButtonLabel={'Shop now'}
-          imageSrc={getImageSource('backToSchool')}
+          heading={'iPhone 15 Pro'}
+          description={'Titanium. So strong. So light. So Pro.'}
+          CTAButtonLabel={'Learn more'}
+          SecondCTAButtonLabel='Buy'
+          imageSrc={getImageSource('iPhone15Pro')}
+          textColor='white'
+          CTAButtonLink={'iphone15pro'}
         />
         <HeroSectionWrapper
           SectionBackgroundColor={'bg-pale'}
-          heading={'Macbook Air 15"'}
-          description={'Impressively big. Impossibly thin.'}
+          heading={'iPhone 15'}
+          description={'New camera. New design. Newphoria'}
           CTAButtonLabel={'Learn more'}
-          SecondCTAButtonLabel={'Shop now'}
-          imageSrc={getImageSource('macbookAir')}
+          SecondCTAButtonLabel={'Buy'}
+          imageSrc={getImageSource('iPhone15')}
+          textColor='black'
+          CTAButtonLink={'iphone15'}
         />
         <HeroSectionWrapper
           SectionBackgroundColor={'bg-pale'}
-          heading={'iPhone 14'}
-          description={'Wonderfull.'}
+          headingType='image'
+          headingImage={getImageSource('watch9Logo')}
+          description={'Smarter. Brighter. Mightier.'}
           CTAButtonLabel={'Learn more'}
-          SecondCTAButtonLabel={'Shop now'}
-          imageSrc={getImageSource('iPhone14')}
+          SecondCTAButtonLabel={'Buy'}
+          imageSrc={getImageSource('appleWatch9')}
+          textColor='white'
+          heading={''}
+          CTAButtonLink={'applewatch9'}
         />
       </div>
       <div className='flex flex-col gap-3 md:mx-3'>
         <div className='flex flex-col gap-3 md:flex-row'>
           <HeroSectionWrapper
             SectionBackgroundColor={'bg-pale'}
-            heading={'Apple Event'}
-            description={'Watch online on 9/12 at 10 a.m. PT.'}
+            description={'Next level adventure.'}
             CTAButtonLabel={'Learn more'}
-            imageSrc={getImageSource('appleEvent')}
+            SecondCTAButtonLabel='Buy'
+            headingImage={getImageSource('watchUltra2Logo')}
+            headingType='image'
+            imageSrc={getImageSource('appleWatchUltra2')}
             isLarge={false}
             textPosition={'end'}
+            textColor='black'
+            heading={''}
+            CTAButtonLink={'applewatchultra2'}
           />
           <HeroSectionWrapper
             SectionBackgroundColor={'bg-pale'}
@@ -99,6 +122,7 @@ const Page = () => {
             SecondCTAButtonLabel={'Buy'}
             imageSrc={getImageSource('iPhone14Pro')}
             isLarge={false}
+            CTAButtonLink={'iphone14pro'}
           />
         </div>
         <div className='flex flex-col gap-3 md:flex-row'>
@@ -121,6 +145,7 @@ const Page = () => {
             SecondCTAButtonLabel={'Buy'}
             imageSrc={getImageSource('iPadPro')}
             isLarge={false}
+            CTAButtonLink={'ipadpro'}
           />
           <HeroSectionWrapper
             SectionBackgroundColor={'bg-pale'}
@@ -132,6 +157,7 @@ const Page = () => {
             isLarge={false}
             headingType='image'
             headingImage={getImageSource('watchLogo')}
+            CTAButtonLink={'applewatch8'}
           />
         </div>
       </div>
