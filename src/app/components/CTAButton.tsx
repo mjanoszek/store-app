@@ -12,8 +12,8 @@ const CTAButton = ({ label, url, isLarge }: CTAButtonProps) => {
       <p
         className={
           isLarge
-            ? 'text-lg text-blue-500 md:text-xl lg:text-2xl'
-            : 'text-lg font-light text-blue-500 lg:text-2xl'
+            ? 'text-lg text-blue-500 md:text-xl '
+            : 'text-lg font-light text-blue-500'
         }
       >
         {label} &rsaquo;
