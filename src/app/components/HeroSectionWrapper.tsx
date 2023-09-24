@@ -76,6 +76,7 @@ const HeroSectionWrapper = ({
                 height={42}
                 width={109}
                 loading='lazy'
+                className='h-auto w-full'
               />
             </div>
           )}
