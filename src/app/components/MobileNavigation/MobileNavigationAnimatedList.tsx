@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import NavigationItem from './NavigationItem';
+import NavigationItem from './MobileNavigationItem';
 
 const variants = {
   open: {

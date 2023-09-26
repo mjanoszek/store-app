@@ -2,8 +2,8 @@
 import * as React from 'react';
 import { useRef } from 'react';
 import { motion, useCycle } from 'framer-motion';
-import NavigationToggle from './NavigationToggle';
-import NavigationAnimatedList from './NavigationAnimatedList';
+import NavigationToggle from './MobileNavigationToggle';
+import NavigationAnimatedList from './MobileNavigationAnimatedList';
 
 const sidebar = {
   open: (height = 1000) => ({
