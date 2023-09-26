@@ -58,7 +58,7 @@ const HeroSectionWrapper = ({
             isLarge
               ? 'max-w-[280px] md:max-w-md lg:max-w-lg '
               : 'max-w-[280px] md:max-w-xs lg:max-w-md '
-          } flex h-full flex-col gap-1 text-center text-white justify-${textPosition}`}
+          } flex h-full flex-col gap-3 text-center text-white justify-${textPosition}`}
         >
           {headingType === 'text' && (
             <HeroHeading
@@ -76,7 +76,7 @@ const HeroSectionWrapper = ({
                 height={42}
                 width={109}
                 loading='lazy'
-                className='h-auto w-full'
+                className='h-auto w-auto'
               />
             </div>
           )}
