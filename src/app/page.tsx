@@ -24,6 +24,7 @@ interface CategoryImages {
 
 const categoryImages: CategoryImages = {
   appleCard: importAllImages('appleCard/appleCard', 'jpeg'),
+  appleCardLogo: importAllImages('appleCard/appleCardLogo', 'png'),
   appleEvent: importAllImages('appleEvent/appleEvent', 'jpeg'),
   appleWatch: importAllImages('appleWatch/appleWatch', 'jpeg'),
   appleWatch9: importAllImages('appleWatch9/appleWatch9', 'jpeg'),
@@ -36,6 +37,8 @@ const categoryImages: CategoryImages = {
   watchUltra2Logo: importAllImages('appleWatchUltra2/watchLogo', 'png'),
   backToSchool: importAllImages('backToSchool/backToSchool', 'jpeg'),
   iPadPro: importAllImages('iPadPro/iPadPro', 'jpeg'),
+  promoCarbon: importAllImages('promoCarbon/promoCarbon', 'jpeg'),
+  promoCarbonLogo: importAllImages('promoCarbon/promoCarbonLogo', 'png'),
   M2Chip: importAllImages('iPadPro/m2Chip', 'png'),
   iPhone14: importAllImages('iPhone14/iPhone14', 'jpeg'),
   iPhone15: importAllImages('iPhone15/iPhone15', 'jpeg'),
@@ -47,6 +50,10 @@ const categoryImages: CategoryImages = {
   invasion: importAllImages('tvPlus/invasion/invasion', 'jpeg'),
   physical: importAllImages('tvPlus/physical/physical', 'jpeg'),
   theMorning: importAllImages('tvPlus/theMorning/theMorning', 'jpeg'),
+  promoShop: importAllImages('promoShop/promoShop', 'jpeg'),
+  promoTradein: importAllImages('promoTradein/promoTradein', 'jpeg'),
+  promoTradeinLogo: importAllImages('promoTradein/tradeinLogo', 'png'),
+  airpodsPro: importAllImages('airpodsPro/airpodsPro', 'jpeg'),
 };
 
 const Page = () => {
@@ -117,47 +124,71 @@ const Page = () => {
           <HeroSectionWrapper
             SectionBackgroundColor={'bg-pale'}
             heading={'iPhone 14 Pro'}
-            description={'Pro. Beyond.'}
+            description={'A first for Apple Watch. And Apple.'}
+            headingImage={getImageSource('promoCarbonLogo')}
+            headingType='image'
             CTAButtonLabel={'Learn more'}
             SecondCTAButtonLabel={'Buy'}
-            imageSrc={getImageSource('iPhone14Pro')}
+            imageSrc={getImageSource('promoCarbon')}
             isLarge={false}
-            CTAButtonLink={'iphone14pro'}
+            CTAButtonLink={'carbonneutral'}
+            textColor='black'
           />
         </div>
         <div className='flex flex-col gap-3 md:flex-row'>
           <HeroSectionWrapper
             SectionBackgroundColor={'bg-pale'}
-            heading={'iPad Pro'}
+            heading={'Shop iPhone with us'}
             description={
-              <>
-                Supercharged by
-                <span
-                  className='ml-2 inline-block h-6 w-6'
-                  style={{
-                    backgroundImage: `url(${getImageSource('M2Chip')})`,
-                    backgroundSize: 'cover',
-                  }}
-                ></span>
-              </>
+              'Save with trade-in, connect to your carrier, and transfer your data, all right here at Apple.'
             }
-            CTAButtonLabel={'Learn more'}
+            CTAButtonLabel={'Shop iPhone'}
             SecondCTAButtonLabel={'Buy'}
-            imageSrc={getImageSource('iPadPro')}
+            imageSrc={getImageSource('promoShop')}
             isLarge={false}
-            CTAButtonLink={'ipadpro'}
+            CTAButtonLink={'iphone'}
+            textColor='black'
           />
           <HeroSectionWrapper
             SectionBackgroundColor={'bg-pale'}
-            heading={'Watch 8'}
-            description={'A healthy leap ahead.'}
+            description={
+              'Get $200-$650 in credit when you trade in iPhone 11 or higher.'
+            }
+            CTAButtonLabel={'See what your device is worth'}
+            headingImage={getImageSource('promoTradeinLogo')}
+            headingType='image'
+            imageSrc={getImageSource('promoTradein')}
+            isLarge={false}
+            textPosition={'end'}
+            textColor='black'
+            heading={''}
+            CTAButtonLink={'appletradein'}
+          />
+        </div>
+        <div className='flex flex-col gap-3 md:flex-row'>
+          <HeroSectionWrapper
+            SectionBackgroundColor={'bg-pale'}
+            heading={'AirPods Pro'}
+            description={'Adaptive Audio. Now playing.'}
             CTAButtonLabel={'Learn more'}
             SecondCTAButtonLabel={'Buy'}
-            imageSrc={getImageSource('appleWatch')}
+            imageSrc={getImageSource('airpodsPro')}
             isLarge={false}
+            CTAButtonLink={'iphone'}
+          />
+          <HeroSectionWrapper
+            SectionBackgroundColor={'bg-pale'}
+            description={'Get up to 3% Daily Cash back with every purchase.'}
+            CTAButtonLabel={'Learn more'}
+            SecondCTAButtonLabel='Apply now'
+            headingImage={getImageSource('appleCardLogo')}
             headingType='image'
-            headingImage={getImageSource('watchLogo')}
-            CTAButtonLink={'applewatch8'}
+            imageSrc={getImageSource('appleCard')}
+            isLarge={false}
+            textPosition={'end'}
+            textColor='black'
+            heading={''}
+            CTAButtonLink={'appletradein'}
           />
         </div>
       </div>
