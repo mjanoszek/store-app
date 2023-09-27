@@ -24,10 +24,13 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
 
   const [currentImage, setCurrentImage] = useState(0);
 
-  const handleImageChange = (indexChange: number) => {
-    const newIndex =
-      (currentImage + indexChange + images.length) % images.length;
+  const handleImageChange = (index: number) => {
+    const newIndex = (currentImage + index + images.length) % images.length;
     setCurrentImage(newIndex);
+  };
+
+  const handleButtonClickChange = (index: number) => {
+    if (index >= 0 && index < images.length) setCurrentImage(index);
   };
 
   return (
@@ -111,7 +114,8 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
                       indx === currentImage && 'bg-gray-100'
                     }`}
                     onClick={() => {
-                      handleImageChange(indx);
+                      handleButtonClickChange(indx);
+                      console.log(indx);
                     }}
                   />
                   {indx === currentImage ? (
