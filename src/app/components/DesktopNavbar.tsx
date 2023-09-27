@@ -1,11 +1,10 @@
 'use client';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaApple } from 'react-icons/fa6';
 import Searchbar from './Searchbar';
 import CheckoutBag from './CheckoutBag';
-import NavigationMenu from './Navigation/NavigationMenu';
-import { motion } from 'framer-motion';
 
 const menuItemVariants = {
   initial: { opacity: 0 },
@@ -13,55 +12,40 @@ const menuItemVariants = {
   exit: { opacity: 0 },
 };
 
-const Navbar = () => {
+const DesktopNavbar = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleLeave = () => {
+    setIsHovered(false);
+  };
   return (
     <div className='fixed left-0 right-0 top-0 z-10 bg-white p-5'>
       <div className='flex items-center justify-center text-black '>
         <div className='flex w-full flex-row items-center justify-center text-xs text-gray-600 '>
-          <ul className='flex w-full items-center justify-between font-light min-[900px]:hidden '>
-            <div className='flex items-center'>
-              <motion.li {...menuItemVariants} className='mr-6'>
-                <Link href='/'>
-                  <FaApple />
-                </Link>
-              </motion.li>
-            </div>
-            <div className='flex '>
-              <div className='flex items-center'>
-                <motion.li {...menuItemVariants} className='mr-6'>
-                  <Link href='/search'>
-                    <Searchbar />
-                  </Link>
-                </motion.li>
-              </div>
-              <div className='flex items-center'>
-                <motion.li {...menuItemVariants}>
-                  <Link href='/bag'>
-                    <CheckoutBag />
-                  </Link>
-                </motion.li>
-              </div>
-              <motion.div
-                {...menuItemVariants}
-                className='ml-5 flex items-center'
-              >
-                <li>
-                  <NavigationMenu />
-                </li>
-              </motion.div>
-            </div>
-          </ul>
-
-          <ul className='hidden items-center gap-7 font-light min-[900px]:flex '>
+          <ul className='hidden items-center gap-7 font-light min-[900px]:flex'>
             <motion.li {...menuItemVariants}>
               <Link href='/'>
                 <FaApple />
               </Link>
             </motion.li>
-            <motion.li {...menuItemVariants}>
+
+            <motion.li
+              {...menuItemVariants}
+              onMouseEnter={handleHover}
+              onMouseLeave={handleLeave}
+            >
               <Link href='/store'>
                 <p>Store</p>
               </Link>
+              {isHovered && (
+                <ul className='sub-menu'>
+                  <p>sdfdsf</p>
+                </ul>
+              )}
             </motion.li>
             <motion.li {...menuItemVariants}>
               <Link href='/mac'>
@@ -130,4 +114,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default DesktopNavbar;
