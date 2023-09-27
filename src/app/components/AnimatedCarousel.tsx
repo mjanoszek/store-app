@@ -33,6 +33,14 @@ const ImageCarousel = ({ images }: ImageCarouselProps) => {
     if (index >= 0 && index < images.length) setCurrentImage(index);
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleImageChange(1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentImage]);
+
   return (
     <div className='min-w-screen flex  flex-col text-center'>
       <AnimatePresence mode='wait'>
