@@ -1,7 +1,8 @@
 import React from 'react';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 const Searchbar = () => {
-  return <div>Searchbar</div>;
+  return <FaMagnifyingGlass />;
 };
 
 export default Searchbar;
