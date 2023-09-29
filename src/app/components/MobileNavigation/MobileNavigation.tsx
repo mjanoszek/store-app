@@ -2,9 +2,9 @@
 import Link from 'next/link';
 import React from 'react';
 import { FaApple } from 'react-icons/fa6';
-import Searchbar from './Searchbar';
-import CheckoutBag from './CheckoutBag';
-import MobileNavigationMenu from './MobileNavigation/MobileNavigationMenu';
+import Searchbar from '../Searchbar';
+import CheckoutBag from '../CheckoutBag';
+import MobileNavigationMenu from './MobileNavigationMenu';
 import { motion } from 'framer-motion';
 
 const menuItemVariants = {
@@ -13,7 +13,7 @@ const menuItemVariants = {
   exit: { opacity: 0 },
 };
 
-const MobileNavbar = () => {
+const MobileNavigation = () => {
   return (
     <div className='fixed left-0 right-0 top-0 z-10 bg-white p-5'>
       <div className='flex items-center justify-center text-black '>
@@ -57,4 +57,4 @@ const MobileNavbar = () => {
   );
 };
 
-export default MobileNavbar;
+export default MobileNavigation;

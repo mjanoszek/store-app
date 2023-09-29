@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaApple } from 'react-icons/fa6';
-import Searchbar from './Searchbar';
-import CheckoutBag from './CheckoutBag';
+import Searchbar from '../Searchbar';
+import CheckoutBag from '../CheckoutBag';
 
 const menuItemVariants = {
   initial: { opacity: 0 },
@@ -12,7 +12,7 @@ const menuItemVariants = {
   exit: { opacity: 0 },
 };
 
-const DesktopNavbar = () => {
+const DesktopNavigation = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -114,4 +114,4 @@ const DesktopNavbar = () => {
   );
 };
 
-export default DesktopNavbar;
+export default DesktopNavigation;
