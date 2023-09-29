@@ -38,7 +38,7 @@ const links = [
   { href: '/support', label: 'Support' },
 ];
 
-const NavigationItem = () => {
+const MobileNavigationItem = () => {
   return (
     <motion.li
       variants={variants}
@@ -60,4 +60,4 @@ const NavigationItem = () => {
     </motion.li>
   );
 };
-export default NavigationItem;
+export default MobileNavigationItem;

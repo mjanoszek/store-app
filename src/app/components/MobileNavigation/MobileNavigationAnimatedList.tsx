@@ -14,7 +14,9 @@ const variants = {
 interface NavigationAnimatedListProps {
   isOpen: boolean;
 }
-const NavigationAnimatedList = ({ isOpen }: NavigationAnimatedListProps) => (
+const MobileNavigationAnimatedList = ({
+  isOpen,
+}: NavigationAnimatedListProps) => (
   <motion.ul
     variants={variants}
     className={`${!isOpen && 'hidden'} absolute left-0 top-12 z-40 w-screen`}
@@ -23,4 +25,4 @@ const NavigationAnimatedList = ({ isOpen }: NavigationAnimatedListProps) => (
   </motion.ul>
 );
 
-export default NavigationAnimatedList;
+export default MobileNavigationAnimatedList;

@@ -27,7 +27,7 @@ const sidebar = {
   },
 };
 
-const NavigationMenu = () => {
+const MobileNavigationMenu = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
 
@@ -47,4 +47,4 @@ const NavigationMenu = () => {
   );
 };
 
-export default NavigationMenu;
+export default MobileNavigationMenu;

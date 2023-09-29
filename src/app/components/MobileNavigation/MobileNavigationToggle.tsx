@@ -22,10 +22,10 @@ const Path = (props: PathProps) => (
   />
 );
 
-interface NavigationToggleProps {
+interface MobileNavigationToggleProps {
   toggle: () => void;
 }
-const NavigationToggle = ({ toggle }: NavigationToggleProps) => (
+const MobileNavigationToggle = ({ toggle }: MobileNavigationToggleProps) => (
   <div className='h-3 w-4'>
     <button
       onClick={toggle}
@@ -49,4 +49,4 @@ const NavigationToggle = ({ toggle }: NavigationToggleProps) => (
     </button>
   </div>
 );
-export default NavigationToggle;
+export default MobileNavigationToggle;
