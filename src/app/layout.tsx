@@ -1,8 +1,8 @@
 'use client';
 import './globals.css';
 import { Roboto } from 'next/font/google';
-import MobileNavbar from './components/MobileNavbar';
-import DesktopNavbar from './components/DesktopNavbar';
+import MobileNavigation from './components/MobileNavigation/MobileNavigation';
+import DesktopNavigation from './components/DestkopNavigation/DesktopNavigation';
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 import { metadata } from './components/MetaData';
@@ -33,7 +33,7 @@ export default function RootLayout({
         <meta name='description' content={metadata.description as string} />
       </Head>
       <body className={roboto.className}>
-        {isDesktop ? <DesktopNavbar /> : <MobileNavbar />}
+        {isDesktop ? <DesktopNavigation /> : <MobileNavigation />}
         {children}
       </body>
     </html>
