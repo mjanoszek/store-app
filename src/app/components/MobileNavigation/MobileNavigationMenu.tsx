@@ -2,8 +2,8 @@
 import * as React from 'react';
 import { useRef } from 'react';
 import { motion, useCycle } from 'framer-motion';
-import NavigationToggle from './MobileNavigationToggle';
-import NavigationAnimatedList from './MobileNavigationAnimatedList';
+import MobileNavigationToggle from './MobileNavigationToggle';
+import MobileNavigationAnimatedList from './MobileNavigationAnimatedList';
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -41,8 +41,8 @@ const MobileNavigationMenu = () => {
         variants={sidebar}
         className='fixed bottom-0 right-0 w-screen bg-white'
       />
-      <NavigationAnimatedList isOpen={isOpen} />
-      <NavigationToggle toggle={() => toggleOpen()} />
+      <MobileNavigationAnimatedList isOpen={isOpen} />
+      <MobileNavigationToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );
 };
