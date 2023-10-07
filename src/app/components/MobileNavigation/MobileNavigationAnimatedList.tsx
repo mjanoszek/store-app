@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import NavigationItem from './MobileNavigationItem';
+import MobileNavigationItem from './MobileNavigationItem';
 
 const variants = {
   open: {
@@ -21,7 +21,7 @@ const MobileNavigationAnimatedList = ({
     variants={variants}
     className={`${!isOpen && 'hidden'} absolute left-0 top-12 z-40 w-screen`}
   >
-    <NavigationItem />
+    <MobileNavigationItem />
   </motion.ul>
 );
 
